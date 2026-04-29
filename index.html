@@ -272,8 +272,17 @@
         <!-- ================= CASE STUDY VIEW (CHEYENNE ZOO) ================= -->
         <section id="casestudy-zoo" class="view min-h-full p-8 pt-12 max-w-6xl mx-auto hidden-view pb-32">
             
-            <button onclick="navigate('projects'); setTimeout(() => switchProjectTab('industry', {currentTarget: document.getElementById('tab-industry')}), 50);" class="mb-10 font-black text-swiss-red uppercase flex items-center gap-3 hover:opacity-80 transition-opacity tracking-widest text-lg">
-                <i class="fas fa-arrow-left"></i> Back to Projects
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex items-center gap-4 mb-12 text-sm font-bold uppercase tracking-widest">
+                <button onclick="navigate('home')" class="text-swiss-text/40 hover:text-swiss-red transition-colors">Home</button>
+                <span class="text-swiss-text/20">/</span>
+                <button onclick="navigate('projects')" class="text-swiss-text/40 hover:text-swiss-red transition-colors">Projects</button>
+                <span class="text-swiss-text/20">/</span>
+                <span class="text-swiss-red">Cheyenne Zoo Case Study</span>
+            </nav>
+
+            <button onclick="navigate('projects'); setTimeout(() => switchProjectTab('industry', {currentTarget: document.getElementById('tab-industry')}), 50);" class="mb-6 font-black text-swiss-red uppercase flex items-center gap-3 hover:translate-x-[-8px] transition-transform tracking-widest text-lg">
+                <i class="fas fa-arrow-left"></i> Back to directory
             </button>
 
             <h1 class="text-5xl font-black text-swiss-text mb-4 tracking-tighter leading-none">Cheyenne Mountain Zoo</h1>
@@ -449,8 +458,15 @@
 
     <!-- Interactive Scripts -->
     <script>
-        // Main Navigation (SPA Behavior)
+        // Enhanced Navigation (SPA with Hash Routing)
         function navigate(targetId) {
+            window.location.hash = targetId;
+        }
+
+        function handleRoute() {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            const targetId = hash;
+
             // Update Nav Links
             document.querySelectorAll('.nav-link').forEach(link => {
                 if (link.getAttribute('data-target') === targetId) {
@@ -462,22 +478,21 @@
                 }
             });
 
-            // Update Views
-            document.querySelectorAll('.view').forEach(view => {
-                if (view.id === targetId) {
-                    view.classList.remove('hidden-view');
-                    setTimeout(() => {
-                        view.classList.add('active');
-                    }, 50); // slight delay for display block transition
-                } else {
+            // Update Views with robust transition
+            const views = document.querySelectorAll('.view');
+            const targetView = document.getElementById(targetId);
+
+            if (targetView) {
+                views.forEach(view => {
                     view.classList.remove('active');
-                    setTimeout(() => {
-                        if (!view.classList.contains('active')) {
-                            view.classList.add('hidden-view');
-                        }
-                    }, 300); // Matches CSS transition duration
-                }
-            });
+                    view.classList.add('hidden-view');
+                });
+                
+                targetView.classList.remove('hidden-view');
+                // Trigger reflow for animation
+                void targetView.offsetWidth;
+                targetView.classList.add('active');
+            }
 
             // Handle Contact Console Visibility
             const footer = document.getElementById('contact-console');
@@ -491,9 +506,12 @@
                 footer.style.pointerEvents = 'none';
             }
             
-            // Scroll to top when navigating
-            document.querySelector('main').scrollTo(0, 0);
+            document.querySelector('main').scrollTo({top: 0, behavior: 'smooth'});
         }
+
+        // Listen for back/forward button and hash changes
+        window.addEventListener('hashchange', handleRoute);
+        window.addEventListener('load', handleRoute);
 
         // Projects Sub-Navigation
         function switchProjectTab(tab, event) {
@@ -584,7 +602,7 @@
             document.querySelectorAll('.carousel-container').forEach(container => {
                 // Initialize the buttons and text
                 const nextBtn = container.querySelector('.carousel-next');
-                moveCarousel(nextBtn, 0);
+                if (nextBtn) moveCarousel(nextBtn, 0);
             });
         });
     </script>
