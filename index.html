@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zixu Gong | Swiss Design Portfolio</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        swiss: {
+                            bg: '#F9F9F9',
+                            card: '#FFFFFF',
+                            blue: '#002FA7', // 30% Secondary: Klein Blue
+                            red: '#E63946',  // 10% Primary: Vibrant Red
+                            text: '#111111'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-swiss-bg text-swiss-text font-sans antialiased h-screen overflow-hidden flex flex-col selection:bg-swiss-red selection:text-white">
+
+    <!-- Navigation (30% Klein Blue dominant, 10% Red accents) -->
+    <header class="w-full px-8 py-6 flex justify-between items-center bg-swiss-bg z-50 border-b-4 border-swiss-blue">
+        <div class="font-extrabold text-2xl text-swiss-red tracking-tight cursor-pointer hover:opacity-80 transition-opacity" onclick="navigate('home')">
+            Zixu (Gavin) Gong
+        </div>
+        <nav class="flex gap-8 font-bold text-swiss-blue uppercase tracking-widest text-sm">
+            <button onclick="navigate('home')" class="nav-link active" data-target="home">Home</button>
+            <button onclick="navigate('projects')" class="nav-link" data-target="projects">Projects</button>
+            <button onclick="navigate('skills')" class="nav-link" data-target="skills">Skills</button>
+        </nav>
+    </header>
+
+    <!-- Main Content Area (60% White dominant) -->
+    <main class="flex-1 relative overflow-y-auto overflow-x-hidden">
+        
+        <!-- ================= HOME VIEW ================= -->
+        <section id="home" class="view active min-h-full flex flex-col items-center justify-center p-8">
+            <div class="max-w-5xl w-full flex flex-col md:flex-row items-center gap-16">
+                <!-- Image Placeholder (Uniquely shaped, sharp edges) -->
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-swiss-card border-4 border-swiss-blue shadow-[16px_16px_0px_0px_#002FA7] shrink-0 overflow-hidden relative group">
+                    <div class="absolute inset-0 bg-swiss-blue/5 group-hover:bg-swiss-blue/10 transition-colors flex items-center justify-center text-swiss-blue opacity-30">
+                        <i class="fas fa-user-astronaut text-8xl group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                </div>
+                
+                <!-- Intro Text -->
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-black text-swiss-text leading-tight mb-8 tracking-tight">
+                        Ph.D. student in <span class="text-swiss-blue">cognitive psychology</span> & <span class="text-swiss-blue">neuroscience</span> at CU Boulder.
+                    </h1>
+                    <div class="border-l-8 border-swiss-red pl-6 py-2 bg-white/50 backdrop-blur-sm">
+                        <p class="text-2xl text-swiss-blue font-bold tracking-wide">
+                            Bridging Human Cognition and AI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS VIEW ================= -->
+        <section id="projects" class="view min-h-full p-8 pt-12 max-w-6xl mx-auto hidden-view pb-32">
+            <h2 class="text-5xl font-black text-swiss-text mb-12 tracking-tighter">Projects <span class="text-swiss-blue">directory</span></h2>
+            
+            <!-- Project Sub-Nav (Split Logic) -->
+            <div class="flex gap-8 mb-12 border-b-4 border-swiss-blue/20 pb-4">
+                <button onclick="switchProjectTab('academic', event)" id="tab-academic" class="project-tab text-2xl font-bold text-swiss-red tracking-wide">Academic projects</button>
+                <button onclick="switchProjectTab('industry', event)" id="tab-industry" class="project-tab text-2xl font-bold text-swiss-blue hover:text-swiss-red tracking-wide transition-colors">Industry projects</button>
+            </div>
+
+            <!-- Academic Branch -->
+            <div id="content-academic" class="project-content block space-y-8">
+                <!-- Publication 1 -->
+                <div class="bg-swiss-card border-l-[12px] border-swiss-blue p-8 shadow-sm hover:shadow-[8px_8px_0px_0px_rgba(0,47,167,0.1)] transition-shadow">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                        <h3 class="text-2xl font-black text-swiss-text tracking-tight">Attentional Weight on Feature Dimensions</h3>
+                        <span class="bg-swiss-blue text-white px-4 py-1.5 font-bold text-sm tracking-widest whitespace-nowrap">SCIENTIFIC REPORTS (2024)</span>
+                    </div>
+                    <p class="text-lg text-swiss-text/80 mb-4 font-semibold">Xu, Z. J., Lleras, A., <span class="font-black text-swiss-text bg-swiss-red/10 px-1">Gong, Z. G.</span>, & Buetti, S.</p>
+                    <p class="text-swiss-blue font-bold text-lg border-t-2 border-swiss-bg pt-4">Focus: Top-down instructions influence the attentional weight on color and shape dimensions during bidimensional search.</p>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="bg-swiss-card border-l-[12px] border-swiss-blue p-8 shadow-sm hover:shadow-[8px_8px_0px_0px_rgba(0,47,167,0.1)] transition-shadow">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                        <h3 class="text-2xl font-black text-swiss-text tracking-tight">Kandinsky's Color-Shape Associations</h3>
+                        <span class="bg-swiss-blue text-white px-4 py-1.5 font-bold text-sm tracking-widest whitespace-nowrap">VINCI'23 ACM</span>
+                    </div>
+                    <p class="text-lg text-swiss-text/80 mb-4 font-semibold"><span class="font-black text-swiss-text bg-swiss-red/10 px-1">Gong, Z.</span>, Zhang, K., & Chen, R.</p>
+                    <p class="text-swiss-blue font-bold text-lg border-t-2 border-swiss-bg pt-4">Focus: Color-shape associations in Chinese context and the mediating role of personality and affect.</p>
+                </div>
+            </div>
+
+            <!-- Industry Branch -->
+            <div id="content-industry" class="project-content hidden space-y-16">
+                
+                <!-- Applied AI Section -->
+                <div>
+                    <h3 class="text-3xl font-black text-swiss-blue mb-8 tracking-tighter flex items-center gap-4">
+                        <div class="w-8 h-8 bg-swiss-blue flex items-center justify-center text-white"><i class="fas fa-robot text-sm"></i></div>
+                        Applied AI branch
+                    </h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- AI Product Lead -->
+                        <div class="bg-swiss-card border-4 border-swiss-blue p-8 relative hover:shadow-[8px_8px_0px_0px_#002FA7] transition-shadow">
+                            <div class="absolute top-0 right-0 bg-swiss-red text-white font-bold text-xs uppercase tracking-widest px-4 py-2">Impact Highlight</div>
+                            <h4 class="text-2xl font-black text-swiss-text mb-2 mt-4 tracking-tight">AI product lead</h4>
+                            <p class="text-swiss-blue font-bold text-lg mb-6">IBM Watsonx & LLM Recruitment</p>
+                            <p class="text-swiss-text font-medium text-lg mb-8 leading-relaxed">Developed a conversational AI assistant using Watsonx and integrated LLMs to automate high-volume recruitment screening.</p>
+                            <div class="border-t-4 border-swiss-red/20 pt-6">
+                                <span class="text-swiss-red font-black uppercase tracking-wider text-sm block mb-1">Outcome:</span>
+                                <span class="font-semibold text-swiss-text">Accelerated candidate screening cycles through advanced NLU prompt logic.</span>
+                            </div>
+                        </div>
+
+                        <!-- ML Engineer -->
+                        <div class="bg-swiss-card border-4 border-swiss-blue p-8 relative hover:shadow-[8px_8px_0px_0px_#002FA7] transition-shadow">
+                            <h4 class="text-2xl font-black text-swiss-text mb-2 mt-4 tracking-tight">Machine learning engineer</h4>
+                            <p class="text-swiss-blue font-bold text-lg mb-6">Azure Spam Classification</p>
+                            <p class="text-swiss-text font-medium text-lg mb-8 leading-relaxed">Built and deployed a binary classification model on Azure Machine Learning using AI-Agent driven IDEs.</p>
+                            <div class="border-t-4 border-swiss-red/20 pt-6">
+                                <span class="text-swiss-red font-black uppercase tracking-wider text-sm block mb-1">Outcome:</span>
+                                <span class="font-semibold text-swiss-text">Drastically reduced development-to-deployment cycle times.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UX Research Section -->
+                <div>
+                    <h3 class="text-3xl font-black text-swiss-blue mb-8 tracking-tighter flex items-center gap-4">
+                        <div class="w-8 h-8 bg-swiss-blue flex items-center justify-center text-white"><i class="fas fa-users text-sm"></i></div>
+                        UX research branch
+                    </h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Zoo Ticketing (Links to Case Study) -->
+                        <div class="bg-swiss-card border-4 border-swiss-blue p-8 relative hover:shadow-[8px_8px_0px_0px_#002FA7] transition-shadow flex flex-col justify-between">
+                            <div class="absolute top-0 right-0 bg-swiss-red text-white font-bold text-xs uppercase tracking-widest px-4 py-2">Case Study</div>
+                            <div>
+                                <h4 class="text-2xl font-black text-swiss-text mb-2 mt-4 tracking-tight">UX research lead</h4>
+                                <p class="text-swiss-blue font-bold text-lg mb-6">Cheyenne Mountain Zoo Ticket Purchase Optimization</p>
+                                <p class="text-swiss-text font-medium text-lg mb-8 leading-relaxed">Streamlined the ticket purchasing process to improve overall visitor conversion rate, creating an intuitive, friction-free checkout flow.</p>
+                            </div>
+                            <div class="border-t-4 border-swiss-red/20 pt-6 flex justify-between items-end mt-auto">
+                                <div class="pr-4">
+                                    <span class="text-swiss-red font-black uppercase tracking-wider text-sm block mb-1">Outcome:</span>
+                                    <span class="font-semibold text-swiss-text">Significantly reduced ticketing abandonment rates.</span>
+                                </div>
+                                <button onclick="navigate('casestudy-zoo')" class="bg-swiss-blue text-white font-bold px-4 py-2 text-sm uppercase hover:bg-swiss-red transition-colors shrink-0 whitespace-nowrap shadow-[4px_4px_0px_0px_rgba(230,57,70,0.5)]">Read Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SKILLS VIEW ================= -->
+        <section id="skills" class="view min-h-full p-8 pt-12 max-w-6xl mx-auto hidden-view flex flex-col md:flex-row gap-16 pb-32">
+            <!-- Title Navigation (30% Blue text) -->
+            <div class="w-full md:w-1/3 flex flex-col gap-6 border-r-4 border-swiss-blue/20 pr-8">
+                <h2 class="text-5xl font-black text-swiss-text mb-8 tracking-tighter">Capabilities</h2>
+                
+                <button onclick="showSkill('programming', event)" class="skill-tab active text-left text-2xl font-black text-swiss-red tracking-tight transition-colors hover:text-swiss-red">
+                    Programming
+                </button>
+                <button onclick="showSkill('ai', event)" class="skill-tab text-left text-2xl font-black text-swiss-blue tracking-tight transition-colors hover:text-swiss-red">
+                    AI & modeling
+                </button>
+                <button onclick="showSkill('neuro', event)" class="skill-tab text-left text-2xl font-black text-swiss-blue tracking-tight transition-colors hover:text-swiss-red">
+                    Neuro & research
+                </button>
+                <button onclick="showSkill('ux', event)" class="skill-tab text-left text-2xl font-black text-swiss-blue tracking-tight transition-colors hover:text-swiss-red">
+                    Design & UX
+                </button>
+            </div>
+
+            <!-- Content Display (60% White + 10% Red Accents) -->
+            <div class="w-full md:w-2/3 flex items-start bg-swiss-card border-4 border-swiss-blue p-12 shadow-[16px_16px_0px_0px_#E63946] min-h-[400px]">
+                
+                <div id="skill-programming" class="skill-content block w-full">
+                    <h3 class="text-4xl font-black text-swiss-blue mb-10 tracking-tighter border-b-4 border-swiss-bg pb-4">Programming</h3>
+                    <ul class="text-3xl font-bold text-swiss-text space-y-8">
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> Python
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> R
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> JavaScript
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> MATLAB
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="skill-ai" class="skill-content hidden w-full">
+                    <h3 class="text-4xl font-black text-swiss-blue mb-10 tracking-tighter border-b-4 border-swiss-bg pb-4">AI & modeling</h3>
+                    <ul class="text-3xl font-bold text-swiss-text space-y-8">
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> GANs
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> LLMs
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> Predictive Modeling
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="skill-neuro" class="skill-content hidden w-full">
+                    <h3 class="text-4xl font-black text-swiss-blue mb-10 tracking-tighter border-b-4 border-swiss-bg pb-4">Neuroscience</h3>
+                    <ul class="text-3xl font-bold text-swiss-text space-y-8">
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> EEG (128-ch)
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> Psychometry
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> Signal Processing
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> PsychoPy
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="skill-ux" class="skill-content hidden w-full">
+                    <h3 class="text-4xl font-black text-swiss-blue mb-10 tracking-tighter border-b-4 border-swiss-bg pb-4">Design & UX</h3>
+                    <ul class="text-3xl font-bold text-swiss-text space-y-8">
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> Figma & Miro
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> Usability Testing
+                        </li>
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-6 h-6 bg-swiss-red group-hover:scale-125 transition-transform"></div> Adobe Automation
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CASE STUDY VIEW (CHEYENNE ZOO) ================= -->
+        <section id="casestudy-zoo" class="view min-h-full p-8 pt-12 max-w-6xl mx-auto hidden-view pb-32">
+            
+            <button onclick="navigate('projects'); setTimeout(() => switchProjectTab('industry', {currentTarget: document.getElementById('tab-industry')}), 50);" class="mb-10 font-black text-swiss-red uppercase flex items-center gap-3 hover:opacity-80 transition-opacity tracking-widest text-lg">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </button>
+
+            <h1 class="text-5xl font-black text-swiss-text mb-4 tracking-tighter leading-none">Cheyenne Mountain Zoo</h1>
+            <h2 class="text-3xl font-black text-swiss-blue mb-12 tracking-tight">Ticket purchase optimization</h2>
+            
+            <!-- Cover Image (Hero Anchor) -->
+            <div class="mb-16">
+                <img src="UX/Cheyenne%20mountain%20zoo/images/coverpage.png" alt="Cover Page" class="w-full border-4 border-swiss-blue shadow-[12px_12px_0px_0px_rgba(0,47,167,0.1)]">
+            </div>
+
+            <!-- Summary Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 border-t-4 border-swiss-blue pt-12">
+                <div class="col-span-2">
+                    <h3 class="text-2xl font-black text-swiss-red mb-4 tracking-wide">Summary</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed">This project focuses on streamlining the ticket purchasing process for the Cheyenne Mountain Zoo to improve the overall visitor conversion rate. By optimizing the user interface, I created a more intuitive navigation system and a friction-free checkout flow, ensuring visitors can complete their purchases quickly and clearly.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-swiss-red mb-4 tracking-wide">Role</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed">Sole designer and researcher (End-to-end execution)</p>
+                </div>
+            </div>
+
+            <!-- Challenge -->
+            <div class="bg-swiss-card border-4 border-swiss-blue p-10 mb-16 shadow-[12px_12px_0px_0px_#002FA7]">
+                <h3 class="text-3xl font-black text-swiss-blue mb-4 tracking-tight">The challenge</h3>
+                <p class="text-xl text-swiss-text font-medium leading-relaxed">The primary challenge was addressing a cumbersome existing workflow that overwhelmed users with excessive information. Due to project constraints, I had to prioritize the core purchasing path rather than redesigning the entire information architecture of the original website.</p>
+            </div>
+
+            <!-- Research -->
+            <h2 class="text-5xl font-black text-swiss-text mb-10 border-b-8 border-swiss-blue pb-4 tracking-tighter">Research</h2>
+            <div class="mb-20">
+                <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Usability testing of current experience</h3>
+                <p class="text-xl text-swiss-text font-medium leading-relaxed mb-8">To evaluate the existing ticket purchase flow, I conducted usability testing sessions with five participants, gathering qualitative feedback on their end-to-end booking experience. Through thematic synthesis of these sessions, I identified three critical pain points: significant information overload that distracted users, a convoluted purchase path that lacked a direct route to completion, and inconsistent interactive elements that led to user confusion. These findings uncovered a major opportunity to simplify the decision-making process by modularizing ticket options and creating a more linear, guided checkout experience.</p>
+                
+                <!-- Affinity Map -->
+                <div class="mb-12 border-4 border-swiss-blue shadow-[12px_12px_0px_0px_rgba(0,47,167,0.1)] bg-white overflow-hidden">
+                    <img src="UX/Cheyenne%20mountain%20zoo/images/affinitymap.png" alt="Affinity Map" class="w-full">
+                </div>
+                
+                <div class="bg-swiss-card border-l-[16px] border-swiss-red p-8 my-10 shadow-sm">
+                    <h3 class="text-xl font-black text-swiss-red mb-4 tracking-widest">How might we</h3>
+                    <p class="text-3xl font-black text-swiss-blue italic tracking-tight leading-tight">"How might we simplify the path to purchase, ensuring a logical and straightforward booking process?"</p>
+                </div>
+            </div>
+
+            <!-- Design -->
+            <h2 class="text-5xl font-black text-swiss-text mb-10 border-b-8 border-swiss-blue pb-4 tracking-tighter mt-16">Design</h2>
+            <div class="mb-20 space-y-16">
+                <div>
+                    <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Problem statement</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed">Zoo visitors need a clear and straightforward online ticket purchase interface in order to book their visit quickly without feeling overwhelmed by complex information and redundant layout.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Task flow</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed mb-8">I streamlined the user journey by isolating each step into a distinct, functional stage, removing all non-essential redirects to minimize friction. The refined flow leads the user directly from the Homepage to Ticket Details, where they select type, quantity, date, and time, and then proceeds immediately to Review/Contact Info and Payment. The process concludes with a clear Order Confirmation, ensuring a linear and efficient path to purchase.</p>
+                    <img src="UX/Cheyenne%20mountain%20zoo/images/taskflow.png" alt="Task Flow" class="w-full border-4 border-swiss-blue shadow-[12px_12px_0px_0px_rgba(0,47,167,0.1)]">
+                </div>
+
+                <!-- Wireframes -->
+                <div>
+                    <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Low fidelity wireframes</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed mb-8">I began by hand-sketching low-fidelity wireframes to rapidly iterate on the logical structure of the new task flow. In addition to the primary booking path, I designed a supplementary "Plan a Visit" page to help users organize their trip before entering the transaction funnel. These sketches served as the architectural blueprint, allowing me to focus on content prioritization and spatial relationships before introducing digital elements.</p>
+                    <div class="carousel-container border-4 border-swiss-blue bg-swiss-card shadow-[12px_12px_0px_0px_rgba(0,47,167,0.1)] p-4 md:p-6" data-current="0" data-total="5">
+                        <div class="flex justify-between items-center mb-6 border-b-4 border-swiss-blue/20 pb-4">
+                            <button onclick="moveCarousel(this, -1)" class="carousel-prev bg-swiss-blue text-white px-4 md:px-6 py-2 font-bold uppercase hover:bg-swiss-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left md:mr-2"></i><span class="hidden md:inline"> Prev</span></button>
+                            <span class="carousel-indicator font-black text-swiss-blue tracking-widest uppercase text-lg md:text-xl">Image 1 of 5</span>
+                            <button onclick="moveCarousel(this, 1)" class="carousel-next bg-swiss-blue text-white px-4 md:px-6 py-2 font-bold uppercase hover:bg-swiss-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed"><span class="hidden md:inline">Next </span><i class="fas fa-chevron-right md:ml-2"></i></button>
+                        </div>
+                        <div class="carousel-viewport relative h-[500px] md:h-[700px] border-4 border-swiss-blue/20 bg-swiss-bg overflow-hidden">
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 block"><img src="UX/Cheyenne%20mountain%20zoo/images/lf1.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/lf2.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/lf3.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/lf4.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/lf5.png" class="w-full shadow-sm"></div>
+                        </div>
+                        <p class="text-center text-swiss-text/70 text-sm font-bold mt-4 tracking-wide uppercase"><i class="fas fa-arrows-alt-v mr-2"></i>Scroll inside image to view full layout</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Mid fidelity wireframes</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed mb-8">Transitioning to Figma, I developed mid-fidelity wireframes to translate my hand-drawn sketches into a digital layout. This stage focused on defining the UI components, establishing consistent spacing, and refining the information hierarchy without the distraction of color or imagery. I used these wireframes to ensure that the core interactions, such as date picking and ticket selection, felt intuitive and functional.</p>
+                    <div class="carousel-container border-4 border-swiss-blue bg-swiss-card shadow-[12px_12px_0px_0px_rgba(0,47,167,0.1)] p-4 md:p-6" data-current="0" data-total="5">
+                        <div class="flex justify-between items-center mb-6 border-b-4 border-swiss-blue/20 pb-4">
+                            <button onclick="moveCarousel(this, -1)" class="carousel-prev bg-swiss-blue text-white px-4 md:px-6 py-2 font-bold uppercase hover:bg-swiss-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left md:mr-2"></i><span class="hidden md:inline"> Prev</span></button>
+                            <span class="carousel-indicator font-black text-swiss-blue tracking-widest uppercase text-lg md:text-xl">Image 1 of 5</span>
+                            <button onclick="moveCarousel(this, 1)" class="carousel-next bg-swiss-blue text-white px-4 md:px-6 py-2 font-bold uppercase hover:bg-swiss-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed"><span class="hidden md:inline">Next </span><i class="fas fa-chevron-right md:ml-2"></i></button>
+                        </div>
+                        <div class="carousel-viewport relative h-[500px] md:h-[700px] border-4 border-swiss-blue/20 bg-swiss-bg overflow-hidden">
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 block"><img src="UX/Cheyenne%20mountain%20zoo/images/mf1.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/mf2.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/mf3.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/mf4.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/mf5.png" class="w-full shadow-sm"></div>
+                        </div>
+                        <p class="text-center text-swiss-text/70 text-sm font-bold mt-4 tracking-wide uppercase"><i class="fas fa-arrows-alt-v mr-2"></i>Scroll inside image to view full layout</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-6 gap-4 border-b-4 border-swiss-red/20 pb-4">
+                        <h3 class="text-2xl font-black text-swiss-red tracking-wide">High fidelity interactive prototype</h3>
+                        <a href="https://www.figma.com/proto/IC0i9jDIOmEgFGQlGc09Th/Zixu?node-id=4172-1484&p=f&t=6yeXJNk32bx3JM1V-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A61&starting-point-node-id=4172%3A1484" target="_blank" class="text-sm bg-swiss-blue text-white px-6 py-3 font-bold uppercase tracking-widest hover:bg-swiss-red transition-colors shrink-0 flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(230,57,70,0.5)]">View Prototype <i class="fas fa-external-link-alt ml-3"></i></a>
+                    </div>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed mb-8">Building upon the mid-fidelity structure, I created a high-fidelity prototype that incorporates the brand's visual identity while further optimizing the typography and alignment for a professional finish. I implemented interactive transitions to simulate a real-world booking experience.</p>
+                    <div class="carousel-container border-4 border-swiss-blue bg-swiss-card shadow-[12px_12px_0px_0px_rgba(0,47,167,0.1)] p-4 md:p-6" data-current="0" data-total="5">
+                        <div class="flex justify-between items-center mb-6 border-b-4 border-swiss-blue/20 pb-4">
+                            <button onclick="moveCarousel(this, -1)" class="carousel-prev bg-swiss-blue text-white px-4 md:px-6 py-2 font-bold uppercase hover:bg-swiss-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left md:mr-2"></i><span class="hidden md:inline"> Prev</span></button>
+                            <span class="carousel-indicator font-black text-swiss-blue tracking-widest uppercase text-lg md:text-xl">Image 1 of 5</span>
+                            <button onclick="moveCarousel(this, 1)" class="carousel-next bg-swiss-blue text-white px-4 md:px-6 py-2 font-bold uppercase hover:bg-swiss-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed"><span class="hidden md:inline">Next </span><i class="fas fa-chevron-right md:ml-2"></i></button>
+                        </div>
+                        <div class="carousel-viewport relative h-[500px] md:h-[700px] border-4 border-swiss-blue/20 bg-swiss-bg overflow-hidden">
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 block"><img src="UX/Cheyenne%20mountain%20zoo/images/hf1.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/hf2.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/hf3.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/hf4.png" class="w-full shadow-sm"></div>
+                            <div class="carousel-slide absolute inset-0 overflow-y-auto p-4 md:p-8 hidden"><img src="UX/Cheyenne%20mountain%20zoo/images/hf5.png" class="w-full shadow-sm"></div>
+                        </div>
+                        <p class="text-center text-swiss-text/70 text-sm font-bold mt-4 tracking-wide uppercase"><i class="fas fa-arrows-alt-v mr-2"></i>Scroll inside image to view full layout</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Instructor feedback</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed">I received invaluable guidance from my instructor, Brittney, which significantly improved the project's visual polish and usability. Her feedback focused on refining the "micro-spacing" between individual frames and larger content blocks to create a more balanced and professional layout. Based on her suggestions, I corrected several alignment issues, unified the color palette for better consistency, and removed redundant content that didn't serve the primary goal of the ticket purchase.</p>
+                </div>
+            </div>
+
+            <!-- Evaluation -->
+            <h2 class="text-5xl font-black text-swiss-text mb-10 border-b-8 border-swiss-blue pb-4 tracking-tighter mt-16">Evaluation & results</h2>
+            <div class="mb-20 clearfix">
+                <img src="UX/Cheyenne%20mountain%20zoo/images/evaluation.png" alt="Evaluation" class="float-none md:float-right w-full md:w-1/2 lg:w-5/12 md:ml-12 mb-8 border-4 border-swiss-blue shadow-[12px_12px_0px_0px_rgba(0,47,167,0.1)]">
+                
+                <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">User testing process and pain points</h3>
+                <p class="text-xl text-swiss-text font-medium leading-relaxed mb-12">I conducted usability tests with three participants to validate the high-fidelity prototype, uncovering several opportunities for refinement. Key friction points included an unintuitive horizontal layout for ticket selection. Users also requested greater financial transparency through a real-time subtotal (including fees) and a sticky order summary to maintain context while filling out forms.</p>
+                
+                <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Updates</h3>
+                <p class="text-xl text-swiss-text font-medium leading-relaxed">To address these findings, I optimized the ticket selection layout by repositioning the ticket types to the left and the date selection to the right, creating a more logical horizontal scanning pattern. I also moved the conservation fee information earlier in the flow, prior to checkout, to better align with natural reading habits and ensure full price transparency before the final payment step.</p>
+            </div>
+
+            <!-- Reflection -->
+            <h2 class="text-5xl font-black text-swiss-text mb-10 border-b-8 border-swiss-blue pb-4 tracking-tighter mt-16">Reflection</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Future plans</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed">With more time, I would explore strategies to integrate a broader range of content from the original website without compromising the minimalist, clutter-free aesthetic I’ve established. I also plan to incorporate high-quality imagery of the zoo’s animals and exhibits to evoke a more welcoming, emotional connection for the user. Furthermore, I aim to weave in the zoo’s unique brand elements more deeply to ensure the visual identity feels authentic to their mission. Finally, I would build out a fully end-to-end interactive prototype to conduct more comprehensive user testing and gather granular feedback on the final payment transitions.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-swiss-red mb-6 tracking-wide">Conclusion</h3>
+                    <p class="text-xl text-swiss-text font-medium leading-relaxed">Completing my first UX project has been an invaluable learning experience, particularly in mastering qualitative research through usability testing. I developed a strong technical foundation in Figma and gained a deep appreciation for the impact of precise typography, alignment, and visual hierarchy on user professionality. Above all, I learned that successful UX design is a continuous dialogue with the user; in commercial interactions, visitors prioritize speed, clarity, and transparency. This project reinforced that one of the most effective designs is one that simplify complex choices into a seamless, intuitive journey.</p>
+                </div>
+            </div>
+            
+            <!-- Bottom Navigation -->
+            <div class="flex justify-center mt-20 border-t-4 border-swiss-blue pt-12">
+                <button onclick="navigate('projects'); setTimeout(() => switchProjectTab('industry', {currentTarget: document.getElementById('tab-industry')}), 50);" class="bg-swiss-blue text-white px-10 py-5 font-black uppercase tracking-widest text-xl hover:bg-swiss-red hover:-translate-y-1 transition-all shadow-[8px_8px_0px_0px_rgba(230,57,70,0.5)]">
+                    <i class="fas fa-arrow-left mr-3"></i> Return to Industry Projects
+                </button>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <!-- Floating Contact Console (Visible on Home) -->
+    <footer id="contact-console" class="fixed bottom-12 left-1/2 -translate-x-1/2 flex gap-8 bg-swiss-card border-4 border-swiss-blue shadow-[8px_8px_0px_0px_#002FA7] px-10 py-5 z-50 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
+        <a href="#" class="text-3xl text-swiss-blue hover:text-swiss-red hover:-translate-y-1 transition-all"><i class="fas fa-envelope"></i></a>
+        <a href="#" class="text-3xl text-swiss-blue hover:text-swiss-red hover:-translate-y-1 transition-all"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-3xl text-swiss-blue hover:text-swiss-red hover:-translate-y-1 transition-all"><i class="fab fa-github"></i></a>
+        <a href="#" class="text-3xl text-swiss-blue hover:text-swiss-red hover:-translate-y-1 transition-all"><i class="fas fa-graduation-cap"></i></a>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Main Navigation (SPA Behavior)
+        function navigate(targetId) {
+            // Update Nav Links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('data-target') === targetId) {
+                    link.classList.add('text-swiss-red', 'active');
+                    link.classList.remove('text-swiss-blue');
+                } else {
+                    link.classList.remove('text-swiss-red', 'active');
+                    link.classList.add('text-swiss-blue');
+                }
+            });
+
+            // Update Views
+            document.querySelectorAll('.view').forEach(view => {
+                if (view.id === targetId) {
+                    view.classList.remove('hidden-view');
+                    setTimeout(() => {
+                        view.classList.add('active');
+                    }, 50); // slight delay for display block transition
+                } else {
+                    view.classList.remove('active');
+                    setTimeout(() => {
+                        if (!view.classList.contains('active')) {
+                            view.classList.add('hidden-view');
+                        }
+                    }, 300); // Matches CSS transition duration
+                }
+            });
+
+            // Handle Contact Console Visibility
+            const footer = document.getElementById('contact-console');
+            if(targetId === 'home') {
+                footer.style.transform = 'translate(-50%, 0)';
+                footer.style.opacity = '1';
+                footer.style.pointerEvents = 'auto';
+            } else {
+                footer.style.transform = 'translate(-50%, 150%)';
+                footer.style.opacity = '0';
+                footer.style.pointerEvents = 'none';
+            }
+            
+            // Scroll to top when navigating
+            document.querySelector('main').scrollTo(0, 0);
+        }
+
+        // Projects Sub-Navigation
+        function switchProjectTab(tab, event) {
+            // Update Tabs
+            document.querySelectorAll('.project-tab').forEach(t => {
+                t.classList.remove('text-swiss-red');
+                t.classList.add('text-swiss-blue');
+            });
+            if(event) {
+                event.currentTarget.classList.add('text-swiss-red');
+                event.currentTarget.classList.remove('text-swiss-blue');
+            }
+
+            // Update Content
+            document.querySelectorAll('.project-content').forEach(c => {
+                if (c.id === 'content-' + tab) {
+                    c.classList.remove('hidden');
+                    c.classList.add('block');
+                    c.style.animation = 'fadeIn 0.4s ease forwards';
+                } else {
+                    c.classList.remove('block');
+                    c.classList.add('hidden');
+                }
+            });
+        }
+
+        // Skills Sub-Navigation
+        function showSkill(skill, event) {
+            // Update Tabs
+            const tabs = document.querySelectorAll('.skill-tab');
+            tabs.forEach(t => {
+                t.classList.remove('text-swiss-red');
+                t.classList.add('text-swiss-blue');
+            });
+            if(event) {
+                event.currentTarget.classList.add('text-swiss-red');
+                event.currentTarget.classList.remove('text-swiss-blue');
+            }
+
+            // Update Content
+            document.querySelectorAll('.skill-content').forEach(c => {
+                if (c.id === 'skill-' + skill) {
+                    c.classList.remove('hidden');
+                    c.classList.add('block');
+                    c.style.animation = 'fadeIn 0.4s ease forwards';
+                } else {
+                    c.classList.remove('block');
+                    c.classList.add('hidden');
+                }
+            });
+        }
+        // Carousel Navigation
+        function moveCarousel(btn, direction) {
+            const container = btn.closest('.carousel-container');
+            let current = parseInt(container.getAttribute('data-current'));
+            const total = parseInt(container.getAttribute('data-total'));
+            const slides = container.querySelectorAll('.carousel-slide');
+            
+            // Update current index
+            current += direction;
+            if (current < 0) current = 0;
+            if (current >= total) current = total - 1;
+            container.setAttribute('data-current', current);
+            
+            // Update indicator
+            container.querySelector('.carousel-indicator').innerText = `Image ${current + 1} of ${total}`;
+            
+            // Update buttons
+            container.querySelector('.carousel-prev').disabled = current === 0;
+            container.querySelector('.carousel-next').disabled = current === total - 1;
+            
+            // Switch slides
+            slides.forEach((slide, index) => {
+                if (index === current) {
+                    slide.classList.remove('hidden');
+                    slide.classList.add('block');
+                    slide.style.animation = 'fadeIn 0.3s ease forwards';
+                    slide.scrollTo(0, 0); // Reset scroll position when switching
+                } else {
+                    slide.classList.add('hidden');
+                    slide.classList.remove('block');
+                }
+            });
+        }
+
+        // Initialize carousels on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.carousel-container').forEach(container => {
+                // Initialize the buttons and text
+                const nextBtn = container.querySelector('.carousel-next');
+                moveCarousel(nextBtn, 0);
+            });
+        });
+    </script>
+</body>
+</html>

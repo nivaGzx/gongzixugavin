@@ -1,0 +1,78 @@
+/* Swiss Design Custom CSS - Minimalist & High Contrast */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enforce Sharp Edges Everywhere */
+* {
+    border-radius: 0 !important;
+}
+
+/* SPA View Transitions */
+.view {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    width: 100%;
+}
+
+.view.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden-view {
+    display: none !important;
+}
+
+/* Custom Scrollbar for Swiss Design */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #F9F9F9;
+    border-left: 2px solid rgba(0, 47, 167, 0.1); /* Subtle Blue Border */
+}
+::-webkit-scrollbar-thumb {
+    background: #002FA7; /* Klein Blue */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #E63946; /* Vibrant Red */
+}
+
+/* Dynamic Fade In Animation for Tabs */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Navigation Hover effects (Bottom line expansion) */
+.nav-link {
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: #E63946;
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}

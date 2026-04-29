@@ -1,0 +1,80 @@
+Cheyenne Mountain Zoo Ticket Purchase Optimization
+
+Project introduction
+
+Name of your project: Cheyenne Mountain Zoo Ticket Purchase Optimization
+
+
+Summary: This project focuses on streamlining the ticket purchasing process for the Cheyenne Mountain Zoo to improve the overall visitor conversion rate. By optimizing the user interface, I created a more intuitive navigation system and a friction-free checkout flow, ensuring visitors can complete their purchases quickly and clearly.
+
+
+Your role: As the sole designer and researcher, I was responsible for the end-to-end execution of the project, covering everything from initial user research to final high-fidelity design.
+
+
+Challenge: The primary challenge was addressing a cumbersome existing workflow that overwhelmed users with excessive information. Due to project constraints, I had to prioritize the core purchasing path rather than redesigning the entire information architecture of the original website.
+
+Research
+
+
+Usability testing of current experience: To evaluate the existing ticket purchase flow, I conducted usability testing sessions with five participants, gathering qualitative feedback on their end-to-end booking experience. Through thematic synthesis of these sessions, I identified three critical pain points: significant information overload that distracted users, a convoluted purchase path that lacked a direct route to completion, and inconsistent interactive elements that led to user confusion. These findings uncovered a major opportunity to simplify the decision-making process by modularizing ticket options and creating a more linear, guided checkout experience.
+
+
+[coverpage.png]
+
+
+How might we statement: How might we simplify the path to purchase, ensuring a logical and straightforward booking process?
+
+Design
+
+
+Problem statement: Zoo visitors needs a clear and straightforward online ticket purchase interface in order to book their visit quickly without feeling overwhelmed by complex information and redundant layout.
+
+
+Task flow: I streamlined the user journey by isolating each step into a distinct, functional stage, removing all non-essential redirects to minimize friction. The refined flow leads the user directly from the Homepage to Ticket Details, where they select type, quantity, date, and time, and then proceeds immediately to Review/Contact Info and Payment. The process concludes with a clear Order Confirmation, ensuring a linear and efficient path to purchase.
+
+
+[taskflow.png]
+
+
+Low fidelity wireframes: I began by hand-sketching low-fidelity wireframes to rapidly iterate on the logical structure of the new task flow. In addition to the primary booking path, I designed a supplementary "Plan a Visit" page to help users organize their trip before entering the transaction funnel. These sketches served as the architectural blueprint, allowing me to focus on content prioritization and spatial relationships before introducing digital elements.
+
+[lf1.png][lf2.png][lf3.png][lf4.png][lf5.png]
+
+
+
+Mid fidelity wireframes: Transitioning to Figma, I developed mid-fidelity wireframes to translate my hand-drawn sketches into a digital layout. This stage focused on defining the UI components, establishing consistent spacing, and refining the information hierarchy without the distraction of color or imagery. I used these wireframes to ensure that the core interactions, such as date picking and ticket selection, felt intuitive and functional.
+
+[mf1.png][mf2.png][mf3.png][mf4.png][mf5.png]
+
+
+
+High fidelity interactive prototype: Building upon the mid-fidelity structure, I created a high-fidelity prototype that incorporates the brand's visual identity while further optimizing the typography and alignment for a professional finish. I implemented interactive transitions to simulate a real-world booking experience.
+
+Prototype Link: https://www.figma.com/proto/IC0i9jDIOmEgFGQlGc09Th/Zixu?node-id=4172-1484&p=f&t=6yeXJNk32bx3JM1V-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A61&starting-point-node-id=4172%3A1484
+
+[hf1.png][hf2.png][hf3.png][hf4.png][hf5.png]
+
+
+
+Instructor feedback: I received invaluable guidance from my instructor, Brittney, which significantly improved the project's visual polish and usability. Her feedback focused on refining the "micro-spacing" between individual frames and larger content blocks to create a more balanced and professional layout. Based on her suggestions, I corrected several alignment issues, unified the color palette for better consistency, and removed redundant content that didn't serve the primary goal of the ticket purchase.
+
+
+
+Evaluation and results
+
+
+User testing process and pain points: I conducted usability tests with three participants to validate the high-fidelity prototype, uncovering several opportunities for refinement. Key friction points included an unintuitive horizontal layout for ticket selection. Users also requested greater financial transparency through a real-time subtotal (including fees) and a sticky order summary to maintain context while filling out forms.
+
+[evaluation.png]
+
+
+Updates: To address these findings, I optimized the ticket selection layout by repositioning the ticket types to the left and the date selection to the right, creating a more logical horizontal scanning pattern. I also moved the conservation fee information earlier in the flow, prior to checkout, to better align with natural reading habits and ensure full price transparency before the final payment step.
+
+Reflection
+
+
+Future plans: With more time, I would explore strategies to integrate a broader range of content from the original website without compromising the minimalist, clutter-free aesthetic I’ve established. I also plan to incorporate high-quality imagery of the zoo’s animals and exhibits to evoke a more welcoming, emotional connection for the user. Furthermore, I aim to weave in the zoo’s unique brand elements more deeply to ensure the visual identity feels authentic to their mission. Finally, I would build out a fully end-to-end interactive prototype to conduct more comprehensive user testing and gather granular feedback on the final payment transitions.
+
+
+Conclusion: Completing my first UX project has been an invaluable learning experience, particularly in mastering qualitative research through usability testing. I developed a strong technical foundation in Figma and gained a deep appreciation for the impact of precise typography, alignment, and visual hierarchy on user professionality. Above all, I learned that successful UX design is a continuous dialogue with the user; in commercial interactions, visitors prioritize speed, clarity, and transparency. This project reinforced that one of the most effective designs is one that simplify complex choices into a seamless, intuitive journey.
+
